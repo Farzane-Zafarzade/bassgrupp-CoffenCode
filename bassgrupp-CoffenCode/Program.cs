@@ -14,7 +14,7 @@ namespace basgrupp_CoffenCode
             string codition = "y";
             do
             {
-                // user enters base group name to start the program
+                // user enters name of base group to start the program
                 string bgName = GetName();
 
                 // check if the name of base group is correct
@@ -23,7 +23,7 @@ namespace basgrupp_CoffenCode
                     ShowMenu(membersOfgroup);// if the name is correct then a menu to select is displayed
                 }
 
-                else // if the name entered is incorrect the user can enter a new name or the program will end
+                else // if the entered name is incorrect the user can enter a new name or the program will end
                 {
                     Console.WriteLine(" Namnet är otillgängligt, försok igen? y/n");
                     codition = (((Console.ReadLine()).ToLower()).Trim());
@@ -37,7 +37,7 @@ namespace basgrupp_CoffenCode
 
         // a class that contains each member's 10 general details,greatest drive for programming and Constructors
         public class Member
-        {
+        {  //fields
             private string name;
             private int age;
             private string accommodation;
@@ -70,7 +70,7 @@ namespace basgrupp_CoffenCode
                 this.driv = driv;
             }
 
-            public string Name
+            public string Name  //properties
             {
                 get { return name; }
                 set { name = value; }
@@ -132,7 +132,7 @@ namespace basgrupp_CoffenCode
 
         static private string GetName()// get the name of base group from the user and return
         {
-            Console.WriteLine("Hej och välkommen. skriv namnet på basgrupp: ");
+            Console.WriteLine("\n För att starta programmet skriv namnet på basgrupp: ");
             string name = Console.ReadLine().ToLower().Trim();
             return name;
         }
@@ -140,13 +140,13 @@ namespace basgrupp_CoffenCode
         // show menu to select an option
         static private void ShowMenu(Dictionary<string, Member> membersOfgroup)
         {
-            Console.WriteLine(" Ange önskat nummer för att visa varje alternativ: ");
-            Console.WriteLine(" 1 - Lista alla deltagare i gruppen separerat med 10 generella detaljer");
+            Console.WriteLine("\n Välkommen till vår bassgrupp \"Coffen Code\". Ange önskat nummer för att visa varje alternativ: ");
+            Console.WriteLine("\n 1 - Lista alla deltagare i gruppen separerat med 10 generella detaljer");
             Console.WriteLine(" 2 - visa varje persons största driv till programmering");
             Console.WriteLine(" 3 - ta bort en medlem av listen");
             Console.WriteLine(" 4 - Exit");
             int choice = GetChoice();//Get user's choice and return
-            ShowOption(choice, membersOfgroup); // Display the option selected by the user
+            ShowOption(choice, membersOfgroup); // Display the selected option by the user
         }
 
 
